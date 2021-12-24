@@ -358,11 +358,13 @@ body {
 .filter-list {
   display: flex;
   margin-bottom: 50px;
-  /* Почему не получается установить автоматические margin-left u margin-right? */
-  margin-left: auto;
-  margin-right: auto;
   justify-content: center;
 }
+
+/* Почему здесь вместо justify-content не получается 
+установить автоматические margin-left u margin-right?
+  margin-left: auto;
+  margin-right: auto; */
 
 .filter-item:not(:last-child) {
   margin-right: 8px;
@@ -376,6 +378,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
+  letter-spacing: 0.03em;
   text-align: center;
   border: none;
   border-radius: 4px;
@@ -399,7 +402,7 @@ body {
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-  margin: calc (-1 * var(--card-list-gap));
+  margin: calc(-1 * var(--card-list-gap));
 }
 
 .portfolio-item {
