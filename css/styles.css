@@ -228,6 +228,7 @@ body {
 
 .features-item {
   margin: 15px;
+  width: calc((100% - 90px) / 4);
 }
 
 /* ----------- Второй вариант ------- */
@@ -285,16 +286,16 @@ body {
 
 .team-list {
   display: flex;
-  margin: -15px;
+  margin: calc(-1 * var(--card-list-gap));
 }
 
 .team-card {
-  padding: 30px 0;
+  padding: calc(2 * var(--card-list-gap)) 0;
 }
 
 .team-item {
   margin: var(--card-list-gap);
-  flex-basis: calc(100% / 4 - 2 * var(--card-list-gap));
+  width: calc(100% - (6 * var(--card-list-gap) / 4));
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -331,6 +332,10 @@ body {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
+}
+
+.footer-item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .footer-link {
@@ -408,6 +413,7 @@ body {
 .portfolio-item {
   margin: var(--card-list-gap);
   flex-basis: calc(100% / 3 - 2 * var(--card-list-gap));
+  /* или: flex-basis: calc((100% - 90px) / 3); */
 }
 
 .portfolio-subtitle {
