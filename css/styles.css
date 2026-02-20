@@ -1,0 +1,235 @@
+/* RESET */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Задаємо властивості боді */
+body {
+    font-family: var(--font-family-body);
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+    letter-spacing: 0.02em;
+    color: var(--body-text-color);
+    background-color: var(--white-background-color);
+}
+
+/* Скидаємо відступи заголовків */
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Нормалізуємо властивості для картинок */
+img {
+  display: block;    /* Прибираємо нижній відступ */
+  max-width: 100%;   /* Щоб великі картинки не вилазили за межі екрана */
+  height: auto;      /* Зберігаємо пропорції */
+}
+
+/* Прибираємо підкреслення та наслідуємо колір у всіх посилань */
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Прибираємо маркери та відступи у списків */
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Нормалізуємо кнопки */
+.button {
+  cursor: pointer;          /* Змінюємо курсор при наведенні */
+  border: none;             /* Прибираємо рамку */
+  background-color: transparent; /* Робимо фон прозорим */
+  padding: 0;               /* Прибираємо внутрішні відступи */
+}
+
+/* Прибираємо дефолтний курсив у address */
+.address {
+    font-style: normal;
+}
+
+/* Variables */
+
+:root {
+    --primary-brand-color: #4D5AE5;   /* IRIS */
+    --pressed-state-color: #404BBF;   /* OCEAN */
+    --dark-color: #2E2F42;    /* NAVY BLUE */
+    --success-color: #31D0AA;   /* GREEN */
+    --body-text-color: #434455;   /* SLATE */
+    --helper-text-color: #8E8F99;   /* LIGHT SLATE */
+    --accent-color: #E7E9FC;    /* CORNFLOWER */
+    --light-mode-color: #F4F4FD;    /* CLOUD */
+    --modal-overlay-color: #2E2F42;   /* NAVY BLUE MODAL */
+    --hero-background-color: #2E2F42;   /* GREY */
+    --white-background-color: #FFFFFF;    /* WHITE */
+    --modal-background-color: #FCFCFC;    /* DAIRY */
+
+    --font-family-body: "Roboto", sans-serif;
+    --font-family-logo: "Raleway", sans-serif;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500; 
+    --font-weight-bold: 700;
+
+    --line-height-title: 1.07143;
+    --line-height-body: 1.5;
+    --line-height-small: 1.16667;
+    --line-height-title: 1.11;
+    --line-height-subtitle: 1.2;
+
+    --letter-spacing-basic: 0.02em;
+    --letter-spacing-second: 0.04em;
+    --letter-spacing-logo: 0.03em;
+
+    --button-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    --card-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+
+    --border-radius: 0 0 4px 4px;
+}
+
+/* Header */
+
+.header {
+    background-color: var(--accent-color);
+}
+
+.logo {
+    font-family: var(--font-family-logo);
+    font-weight: var(--font-weight-bold);
+    font-size: 18px;
+    line-height: var(--line-height-small);
+    letter-spacing: var(--letter-spacing-logo);
+    text-transform: uppercase;
+}
+
+.header .logo {
+    color: var(--dark-color);
+}
+
+.logo .highlight {
+    color: var(--primary-brand-color);
+}
+
+.nav-list-item .link {
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-color);
+}
+
+.nav-list-item .link:hover,
+.nav-list-item .link:active {
+    color: var(--pressed-state-color);
+}
+
+.address-link:hover,
+.address-link:active {
+    color: var(--pressed-state-color);
+}
+
+/* Hero */
+
+.hero {
+    background-color: var(--dark-color);
+}
+.hero-title {
+    font-weight: var(--font-weight-bold);
+    font-size: 56px;
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-basic);
+    color: var(--white-background-color);
+}
+
+.button {
+    border-radius: 4px;
+    padding: 16px 32px;
+    width: 169px;
+    height: 56px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-second);
+    color: var(--white-background-color);
+    box-shadow: var(--button-shadow);
+    background-color: var(--primary-brand-color);
+}
+
+.button:hover,
+.button:active {
+    box-shadow: var(--button-shadow);
+    background: var(--pressed-state-color);
+}
+
+/* About Us */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* Sections */
+
+.team {
+    background-color: var(--light-mode-color);
+}
+
+.team .list-item {
+    border-radius: 0 0 4px 4px;
+    box-shadow: var(--card-shadow);
+}
+
+.team .container{
+    background-color: var(--white-background-color);
+}
+
+.portfolio .container {
+    border-bottom: 1px solid var(--accent-color);
+    border-left: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+}
+
+.portfolio .list-item:hover,
+.portfolio .list-item:focus {
+    box-shadow: var(--card-shadow);
+}
+
+.title {
+    font-weight: var(--font-weight-bold);
+    font-size: 36px;
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-basic);
+    color: var(--dark-color);
+}
+
+.subtitle {
+    font-weight: var(--font-weight-medium);
+    font-size: 20px;
+    line-height: var(--line-height-subtitle);
+    letter-spacing: var(--letter-spacing-basic);
+    color: var(--dark-color);
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--dark-color);
+}
+
+.footer .logo {
+    color: var(--light-mode-color);
+}
+
+.footer-text {
+    color: var(--light-mode-color);
+}
