@@ -239,7 +239,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    column-gap: 24px;
 }
 /* #endregion */
 
@@ -294,6 +294,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
 
 .portfolio-list {
     flex-wrap: wrap;
+    row-gap: 48px;
 }
 
 .portfolio-list-item {
