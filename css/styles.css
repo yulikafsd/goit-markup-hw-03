@@ -1,4 +1,4 @@
-/* Variables */
+/* Variables #region */
 
 :root {
     --primary-brand-color: #4D5AE5;   /* IRIS */
@@ -37,16 +37,47 @@
     --border-radius: 0 0 4px 4px;
     --hero-button-border-radius: 4px;
 }
+/* #endregion */
 
-/* RESET */
+/* Reset #region */
 
-*,
-*:hover,
-*:focus {
-    box-sizing: border-box;
+h1, h2, h3, h4, h5, h6, p { /* Скидаємо відступи заголовків */
+    margin: 0;
+    padding: 0;
 }
 
-/* Задаємо властивості боді */
+img {                  /* Нормалізуємо властивості для картинок */
+    display: block;    /* Прибираємо нижній відступ */
+    max-width: 100%;   /* Щоб великі картинки не вилазили за межі екрана */
+    height: auto;      /* Зберігаємо пропорції */
+}
+
+a {             /* Прибираємо підкреслення та наслідуємо колір у всіх посилань */
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {        /* Прибираємо маркери та відступи у списків */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+button {                      /* Нормалізуємо кнопки */
+    cursor: pointer;          /* Змінюємо курсор при наведенні */
+    border: none;             /* Прибираємо рамку */
+    background-color: transparent; /* Робимо фон прозорим */
+    padding: 0;               /* Прибираємо внутрішні відступи */
+}
+
+address {       /* Прибираємо дефолтний курсив у address */
+    font-style: normal;
+}
+/* #endregion */
+
+/* Body #region */
+
 body {
     font-family: var(--font-family-body);
     font-size: 16px;
@@ -57,52 +88,50 @@ body {
     background-color: var(--white-background-color);
 }
 
-/* Скидаємо відступи заголовків */
-h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
-    padding: 0;
+.page-container {   /* Крок 1. Притискаємо футер вниз */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Нормалізуємо властивості для картинок */
-img {
-    display: block;    /* Прибираємо нижній відступ */
-    max-width: 100%;   /* Щоб великі картинки не вилазили за межі екрана */
-    height: auto;      /* Зберігаємо пропорції */
+main {              /* Крок 2. Притискаємо футер вниз */
+    flex-grow: 1;
 }
 
-/* Прибираємо підкреслення та наслідуємо колір у всіх посилань */
-a {
-    text-decoration: none;
-    color: inherit;
+.container { 
+    max-width: 1158px;
+    padding: 0 15px;
+    margin: 0 auto;  
 }
 
-/* Прибираємо маркери та відступи у списків */
-ul, ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Нормалізуємо кнопки */
-button {
-    cursor: pointer;          /* Змінюємо курсор при наведенні */
-    border: none;             /* Прибираємо рамку */
-    background-color: transparent; /* Робимо фон прозорим */
-    padding: 0;               /* Прибираємо внутрішні відступи */
-}
-
-/* Прибираємо дефолтний курсив у address */
-address {
-    font-style: normal;
-}
-
-/* Header */
+/* Header #region */
 
 .header {
-    background-color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+    background-color: var(--white-background-color);
 }
 
-.logo {
+.header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav,
+.nav-list,
+.address-list {
+    display: flex;
+}
+
+.nav-list {
+    margin-left: 76px;
+}
+
+.nav-list-item:not(:first-child),
+.address-list-item:not(:first-child) {
+    margin-left: 40px;
+}
+
+.logo-link {
     font-family: var(--font-family-logo);
     font-weight: var(--font-weight-bold);
     font-size: 18px;
@@ -110,6 +139,14 @@ address {
     letter-spacing: var(--letter-spacing-logo);
     text-transform: uppercase;
     color: var(--primary-brand-color);
+}
+
+.header .logo-link,
+.nav-link,
+.address-link {
+    display: inline-block;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .header-logo-accent {
@@ -122,35 +159,34 @@ address {
 }
 
 .nav-link:hover,
-.nav-link:focus {
-    color: var(--pressed-state-color);
-}
-
+.nav-link:focus,
 .address-link:hover,
 .address-link:focus {
     color: var(--pressed-state-color);
 }
+/* #endregion */
 
-/* Hero */
+/* Hero #region */
 
 .hero {
+    padding-top: 188px;
+    padding-bottom: 188px;
     background-color: var(--dark-color);
 }
 .hero-title {
+    margin-bottom: 48px;
     font-size: 56px;
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-hero-title);
     letter-spacing: var(--letter-spacing-basic);
-    text-transform: capitalize;
     text-align: center;
     color: var(--white-background-color);
 }
 
 .hero-button {
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
     padding: 16px 32px;
-    align-items: center;
-    justify-content: center;
     border-radius: var(--hero-button-border-radius);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-body);
@@ -164,12 +200,19 @@ address {
 .hero-button:hover,
 .hero-button:focus {
     box-shadow: var(--button-shadow);
-    background: var(--pressed-state-color);
+    background-color: var(--pressed-state-color);
+}
+/* #endregion */
+
+/* Sections #region */
+
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
-/* Sections */
-
 .title {
+    margin-bottom: 72px;
     font-weight: var(--font-weight-bold);
     font-size: 36px;
     line-height: var(--line-height-title);
@@ -180,6 +223,7 @@ address {
 }
 
 .subtitle {
+    margin-bottom: 8px;
     font-weight: var(--font-weight-medium);
     font-size: 20px;
     line-height: var(--line-height-subtitle);
@@ -188,7 +232,16 @@ address {
     color: var(--dark-color);
 }
 
-/* Features */
+.features-list,
+.team-list,
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+/* #endregion */
+
+/* Features #region */
 
 .visually-hidden {
     position: absolute;
@@ -204,13 +257,20 @@ address {
     overflow: hidden;
 }
 
-/* Team */
+.features-list-item {
+    flex-basis: calc((100% - (24px*3)) / 4);
+}
+
+/* #endregion */
+
+/* Team #region */
 
 .team {
     background-color: var(--light-mode-color);
 }
 
 .team-list-item {
+    flex-basis: calc((100% - (24px*3)) / 4);
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     overflow: hidden;
@@ -220,22 +280,46 @@ address {
     background-color: var(--white-background-color);
 }
 
-.portfolio-card {
-    border-bottom: 1px solid var(--accent-color);
-    border-left: 1px solid var(--accent-color);
-    border-right: 1px solid var(--accent-color);
+.team-card-text-content {
+    padding: 32px 16px;
+    text-align: center;
+}
+/* #endregion */
+
+/* Portfolio #region */
+
+.portfolio-list {
+    flex-wrap: wrap;
+}
+
+.portfolio-list-item {
+    flex-basis: calc((100% - (24px*2)) / 3);
 }
 
 .portfolio-list-item:hover,
 .portfolio-list-item:focus {
     box-shadow: var(--card-shadow);
-    overflow: hidden;
 }
 
-/* Footer */
+.portfolio-card-text-content {
+    padding: 32px 16px;
+    border-left: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+/* #endregion */
+
+/* Footer #region */
 
 .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
     background-color: var(--dark-color);
+}
+
+.footer .logo-link {
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .footer-logo-accent {
@@ -245,3 +329,18 @@ address {
 .footer-text {
     color: var(--light-mode-color);
 }
+
+/* #endregion */
+
+/* помістити картинку в обгортку */
+
+/* .thumb {
+    height: 400px;
+    width: 300px;
+}
+
+.thumb img {
+    height: 100%;
+    width: 100%;
+	object-fit: cover;
+} */
