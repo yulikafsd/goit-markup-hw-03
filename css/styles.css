@@ -116,22 +116,20 @@ main {              /* Крок 2. Притискаємо футер вниз */
     justify-content: space-between;
 }
 
-.nav,
+.nav {
+    display: flex;
+    align-items: center;
+}
+
 .nav-list,
 .address-list {
     display: flex;
-}
-
-.nav-list {
-    margin-left: 76px;
-}
-
-.nav-list-item:not(:first-child),
-.address-list-item:not(:first-child) {
-    margin-left: 40px;
+    gap: 40px;
+    align-items: center;
 }
 
 .logo-link {
+    margin-right: 76px;
     font-family: var(--font-family-logo);
     font-weight: var(--font-weight-bold);
     font-size: 18px;
@@ -172,19 +170,23 @@ main {              /* Крок 2. Притискаємо футер вниз */
     padding-top: 188px;
     padding-bottom: 188px;
     background-color: var(--dark-color);
+    text-align: center;
 }
 .hero-title {
+    max-width: 496px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 48px;
     font-size: 56px;
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-hero-title);
     letter-spacing: var(--letter-spacing-basic);
-    text-align: center;
     color: var(--white-background-color);
 }
 
 .hero-button {
     display: block;
+    min-width: 169px;
     margin: 0 auto;
     padding: 16px 32px;
     border-radius: var(--hero-button-border-radius);
@@ -274,14 +276,16 @@ main {              /* Крок 2. Притискаємо футер вниз */
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     overflow: hidden;
-}
-
-.team-card{
     background-color: var(--white-background-color);
 }
 
+.team-list-item .subtitle,
+.team-list-item .text {
+    text-align: center;
+}
+
 .team-card-text-content {
-    padding: 32px 16px;
+    padding: 32px 0;
     text-align: center;
 }
 /* #endregion */
@@ -303,9 +307,8 @@ main {              /* Крок 2. Притискаємо футер вниз */
 
 .portfolio-card-text-content {
     padding: 32px 16px;
-    border-left: 1px solid var(--accent-color);
-    border-right: 1px solid var(--accent-color);
-    border-bottom: 1px solid var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-top: none;
 }
 /* #endregion */
 
